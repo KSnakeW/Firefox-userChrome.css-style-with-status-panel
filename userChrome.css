@@ -1,0 +1,103 @@
+/* restore status panel in Firefox Quantum*/
+
+#browser-bottombox {
+	height: 20px;
+  border: 1px solid none;
+	border-top: 1px solid;
+	border-bottom-color: transparent !important;
+  border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
+}
+
+#statuspanel {
+	height: 20px !important;
+	width: 100% !important;
+	left: 0px !important;
+	bottom: 0px !important;
+	padding: 0px !important;
+	transition-duration: 0s !important;
+	transition-delay: 0s !important;
+	transition-property: none !important;
+  border: 1px solid none;
+	border-top: 1px solid;
+	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
+	/* background-color: rgb(240,240,240)!important; */
+}
+
+#statuspanel-inner {
+	height: 20px !important;
+}
+
+#statuspanel-label {
+	top: 0px !important;
+	margin-left: 0px !important;
+	margin-top: 0px !important;
+	border: none !important;
+	padding-left: 5px !important;
+	padding-top: 0px !important;
+	background: transparent !important;
+/*	color: rgb(24,24,24) !important; */
+}
+
+html[inFullscreen="true"] #browser-bottombox {
+	display:none !important;
+}
+html[inFullscreen="true"] #statuspanel {
+	display:none !important;
+}
+
+
+
+/* change status panel colors base on current theme mode */
+
+@media (prefers-color-scheme: dark) {
+	#browser-bottombox {
+		background-color: rgb(17,17,17) !important;
+	}
+	#statuspanel {
+		background-color: rgb(17,17,17)!important;
+	}
+	#statuspanel-label{
+		color: white !important;
+	}
+}
+
+@media (prefers-color-scheme: light)
+{
+		#browser-bottombox {
+		background-color: rgb(240,240,240) !important;
+	}
+	#statuspanel {
+		background-color: rgb(240,240,240) !important;
+	}
+	#statuspanel-label{
+		color: rgb(24,24,24) !important;
+	}
+}
+
+
+
+/* new, better tabs visibility and theming pinned tabs */
+.tabbrowser-tab:not([selected]) .tab-background{
+	background-color: rgba(128,128,128,.1) !important;
+	border: 1px solid !important;
+	border-color: rgba(128,128,128,.3) !important;
+}
+
+.tabbrowser-tab .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(255, 255, 255, .4) !important;
+}
+
+.tabbrowser-tab:hover:not([selected]) .tab-background{
+	background-color: rgba(255,255,255,.2) !important;
+}
+
+.tabbrowser-tab[pinned]:not([selected]) .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(33,143,166,1) !important;
+}
+
+.tabbrowser-tab[pinned] .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(255, 51, 95, .6) !important;
+}
