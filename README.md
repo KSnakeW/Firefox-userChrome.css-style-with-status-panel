@@ -1,8 +1,9 @@
-# Firefox-userChrome.css-style-with-status-panel
+# Firefox userChrome.css style with status panel
 UserChrome.css style for Firefox ver. > 96 with default theme. Restores status panel.
 
 Allows restore classic status panel in Firefox. Additionally subtly changes tabs look in default Firefox themes.
 
+#Installation
 Just copy 'chrome\userChrome.css' into Your Firefox profile folder.
 
 To open Root Profile folder just:
