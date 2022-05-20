@@ -13,6 +13,7 @@ To open **Root Profile** folder just:
 - click **"Open folder"** button next to **Root Profile** path,
 - create ***chrome*** folder and open it,
 - save here ***userChrome.css*** file,
+- restart Firefox,
 - VOILA!
 
 ### As far works on every system that's Firefox Quantum runs
