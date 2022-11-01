@@ -5,6 +5,12 @@
 	border-bottom: 20px solid transparent !important;    
 }
 
+
+html[inFullscreen="true"] .browserContainer, 
+#main-window {  
+	border-bottom: inherit !important;    
+}
+
 #statuspanel {
 	height: 20px !important;
 	width: 100% !important;
@@ -117,4 +123,3 @@ html[inFullscreen="true"] #statuspanel {
 	mask-composite: exclude !important;
 	border-radius: 4px !important; */
 }
-
