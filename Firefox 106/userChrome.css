@@ -20,12 +20,17 @@ html[inFullscreen="true"] .browserContainer, #main-window {
 	transition-delay: 50ms !important;
 	border-top: 1px solid;
 	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
-  background-color: var(--lwt-accent-color) !important;
+	background-color: var(--lwt-accent-color) !important;
 }
 
 #statuspanel[hidden="true"]{
- position: absolute !important;
+	position: absolute !important;
 	display: block !important;
+}
+
+#statuspanel[inactive]{
+	visibility: visible !important;
+	opacity: 100 !important;
 }
 
 html[inFullscreen="true"] #statuspanel {
@@ -34,7 +39,7 @@ html[inFullscreen="true"] #statuspanel {
 }
 
 html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
-  visibility: hidden !important;
+	visibility: hidden !important;
 	opacity: 0 !important;  
 }
 
@@ -52,7 +57,7 @@ html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
 }
 
 #statuspanel[type="defaultStatus"] #statuspanel-label{
-  visibility: hidden !important;
+	visibility: hidden !important;
 	opacity: 0 !important;  
 }
 
