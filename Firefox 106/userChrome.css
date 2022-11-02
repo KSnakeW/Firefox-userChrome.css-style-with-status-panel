@@ -1,13 +1,11 @@
 /* restore status panel in Firefox 106 and above*/
 
-.browserContainer, 
-#main-window {  
-	border-bottom: 20px solid transparent !important;    
+.browserContainer, #main-window {  
+	border-bottom: 20px solid var(--lwt-accent-color) !important;    
 }
 
 
-html[inFullscreen="true"] .browserContainer, 
-#main-window {  
+html[inFullscreen="true"] .browserContainer, #main-window {  
 	border-bottom: inherit !important;    
 }
 
@@ -18,16 +16,26 @@ html[inFullscreen="true"] .browserContainer,
 	left: 0px !important;
 	bottom: -20px !important;
 	padding: 0px !important;
-	transition-duration: 0s !important;
-	transition-delay: 0s !important;
-	transition-property: none !important;
-	border: 1px solid none;
+	transition-duration: 150ms !important;
+	transition-delay: 50ms !important;
 	border-top: 1px solid;
 	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
+  background-color: var(--lwt-accent-color) !important;
 }
 
-#statuspanel:not([hidden]){
-	max-width: 100% !important;
+#statuspanel[hidden="true"]{
+ position: absolute !important;
+	display: block !important;
+}
+
+html[inFullscreen="true"] #statuspanel {
+	bottom: 0px !important;
+	width: calc(100vw - 16px) !important;
+}
+
+html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
+  visibility: hidden !important;
+	opacity: 0 !important;  
 }
 
 #statuspanel-label {
@@ -38,41 +46,14 @@ html[inFullscreen="true"] .browserContainer,
 	padding-left: 5px !important;
 	padding-top: 0px !important;
 	background: transparent !important;
-}
-
-html[inFullscreen="true"] #browser-bottombox {
-	display:none !important;
-}
-
-html[inFullscreen="true"] #statuspanel {
-	display:none !important;
+	transition-duration: 150ms !important;
+	transition-delay: 50ms !important;
+  color: var(--toolbar-color) !important;
 }
 
 #statuspanel[type="defaultStatus"] #statuspanel-label{
-	display: none !important;
-}
-
-
-
-/* change status panel colors base on current theme mode */
-
-@media (prefers-color-scheme: dark) {
-	#statuspanel {
-		background-color: rgb(17,17,17)!important;
-	}
-	#statuspanel-label{
-		color: white !important;
-	}
-}
-
-@media (prefers-color-scheme: light)
-{
-	#statuspanel {
-		background-color: rgb(240,240,240) !important;
-	}
-	#statuspanel-label{
-		color: rgb(24,24,24) !important;
-	}
+  visibility: hidden !important;
+	opacity: 0 !important;  
 }
 
 
