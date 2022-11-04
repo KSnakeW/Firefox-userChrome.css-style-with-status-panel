@@ -1,30 +1,34 @@
-/* restore status panel in Firefox 106 and above*/
+/* restore status panel in Firefox 106 and above */
 
+/* Adds bottom margin to window for status panel will not interfere with scrollbar. 
+Can be omitted when status panel is displayed dynamically */
 .browserContainer, #main-window {  
 	border-bottom: 20px solid var(--lwt-accent-color) !important;    
 }
 
-
+/* Hides bottom border when browser is in full screen*/
 html[inFullscreen="true"] .browserContainer, #main-window {  
 	border-bottom: inherit !important;    
 }
+
 
 #statuspanel {
 	height: 20px !important;
 	width: 100% !important;
 	max-width: 100% !important;
 	left: 0px !important;
-	bottom: -20px !important;
+	bottom: -20px !important; /* change to positive value when in dynamic mode. Negative is when status panel is always show*/
 	padding: 0px !important;
 	transition-duration: 150ms !important;
 	transition-delay: 50ms !important;
 	border-top: 1px solid;
 	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
-	background-color: var(--lwt-accent-color) !important;
+  background-color: var(--lwt-accent-color) !important;
 }
 
+/* Force status panel to show always, even when is empty*/
 #statuspanel[hidden="true"]{
-	position: absolute !important;
+ position: absolute !important;
 	display: block !important;
 }
 
@@ -32,17 +36,21 @@ html[inFullscreen="true"] .browserContainer, #main-window {
 	visibility: visible !important;
 	opacity: 100 !important;
 }
+/* */
 
+/* Shortens panel by scrollbar width when in full screen mode. */
 html[inFullscreen="true"] #statuspanel {
 	bottom: 0px !important;
 	width: calc(100vw - 16px) !important;
 }
 
+/* Hides status panel when its label is empty. */
 html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
-	visibility: hidden !important;
+  visibility: hidden !important;
 	opacity: 0 !important;  
 }
 
+/* Defines status label parameters to fit it on panel*/
 #statuspanel-label {
 	top: 0px !important;
 	margin-left: 0px !important;
@@ -56,18 +64,23 @@ html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
   color: var(--toolbar-color) !important;
 }
 
+/* Hides label text when there is no any action with browser or website i.ex. mouse not hovering any link */
 #statuspanel[type="defaultStatus"] #statuspanel-label{
-	visibility: hidden !important;
+  visibility: hidden !important;
 	opacity: 0 !important;  
 }
 
-
+/* Prevents status panel to cover search bar */
 findbar{
-	margin-top: 20px !important;
+	margin-top: 18px !important;
+}
+/* Prevents status panel to cover developer tools when they are on bottom */
+splitter.devtools-horizontal-splitter {
+  margin-top: 18px !important;
 }
 
 
-/* U can ommit part below if won't change colors in some areas */
+/* U can omit part below if won't change colors in some areas */
 /* new, better tabs visibility and theming pinned tabs */
 .tabbrowser-tab:not([selected]) .tab-background{
 	background-color: rgba(128,128,128,.1) !important;
@@ -94,7 +107,7 @@ findbar{
 	border-color: rgba(255, 51, 95, .6) !important;
 }
 
-/* highlighting tabs with sound playing */
+/* Highlights inactive tabs which audio playing */
 .tabbrowser-tab[soundplaying="true"]:not([selected]) .tab-background{
 	border: 2px solid !important;
 	border-color: rgba(255, 25, 95, .6) !important;
@@ -103,14 +116,10 @@ findbar{
 
 
 
-/* URL bar frame color changed to gradient */
+/* Active URL bar frame color changed to gradient */
 #urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
 #searchbar:focus-within {
 	outline-color: transparent !important;
 	border: 1px solid transparent !important;
   border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch !important;
-/*	background:  linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) border-box !important;
-	mask: -moz-linear-gradient(white 0 0) padding-box !important;
-	mask-composite: exclude !important;
-	border-radius: 4px !important; */
 }
