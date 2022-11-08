@@ -3,7 +3,7 @@ UserChrome.css style for Firefox ver. > 96 with default theme. Restores status p
 
 Allows restore classic status panel in Firefox. Additionally subtly changes tabs look in default Firefox themes.
 
-For version up to 105 status panel is always hidden even if Firefox force to display any lable.
+For version up to 105 status panel is always hidden in fullscreen. Even if Firefox force to display any lable.
 
 From version 106 everything is dynamic as in original FF behavior.
 
