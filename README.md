@@ -3,6 +3,11 @@ UserChrome.css style for Firefox ver. > 96 with default theme. Restores status p
 
 Allows restore classic status panel in Firefox. Additionally subtly changes tabs look in default Firefox themes.
 
+For version up to 105 status panel is always hidden even if Firefox force to display any lable.
+
+From version 106 everything is dynamic as in original FF behavior.
+
+
 ### Installation
 Just copy **chrome\userChrome.css** into Your Firefox profile folder.
 
@@ -15,5 +20,8 @@ To open **Root Profile** folder just:
 - save here ***userChrome.css*** file,
 - restart Firefox,
 - VOILA!
+
+## If doesn't work:
+Open **about:config**, search or create ***toolkit.legacyUserProfileCustomizations.stylesheets*** *boolean* preference, set it *true* and restart browser.
 
 ### As far works on every system that's Firefox Quantum runs
