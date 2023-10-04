@@ -11,6 +11,12 @@ html[inFullscreen="true"] .browserContainer, #main-window {
 	border-bottom: inherit !important;    
 }
 
+/* Uncomment this section to hide status panel in pop-up windows */
+/*
+html[chromehidden~="location"] .browserContainer, #main-window { 
+  border-bottom: inherit !important;    
+}
+*/
 
 #statuspanel {
 	height: 20px !important;
