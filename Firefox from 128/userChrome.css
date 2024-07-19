@@ -1,0 +1,162 @@
+/* restore status panel in Firefox 128 and above */
+
+/* Adds bottom margin to window for status panel will not interfere with scrollbar. 
+Can be omitted when status panel is displayed dynamically */
+.browserContainer, #main-window {  
+	border-bottom: 20px solid var(--lwt-accent-color) !important;    
+}
+
+/* Hides bottom border when browser is in full screen*/
+html[inFullscreen="true"] .browserContainer, #main-window {  
+	border-bottom: inherit !important;    
+}
+
+/* Below part for pop-up windows modified by ablazhov - THANK You! */
+/* Uncomment this section to hide status panel in pop-up windows when mouse is not over a link /
+/
+:root[chromehidden~="toolbar"] .browserContainer {
+padding-bottom: 0px !important;
+}
+:root[chromehidden~="toolbar"] #statuspanel {
+bottom: 0px !important;
+}
+:root[chromehidden~="toolbar"] #statuspanel[type="defaultStatus"] {
+visibility: hidden !important;
+opacity: 0 !important;
+}
+*/
+
+#statuspanel {
+	height: 20px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	left: 0px !important;
+	bottom: -20px !important; /* change to positive value when in dynamic mode. Negative is when status panel is always show*/
+	padding: 0px !important;
+	transition-duration: 150ms !important;
+	transition-delay: 50ms !important;
+	border-top: 1px solid;
+	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
+  background-color: var(--lwt-accent-color) !important;
+}
+
+/* Force status panel to show always, even when is empty*/
+#statuspanel[hidden="true"]{
+ position: absolute !important;
+	display: block !important;
+}
+
+#statuspanel[inactive]{
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
+
+/* Shortens panel by scrollbar width when in full screen mode. */
+html[inFullscreen="true"] #statuspanel {
+	bottom: 0px !important;
+	width: calc(100vw - 16px) !important;
+}
+
+/* Hides status panel when its label is empty. */
+html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
+	visibility: hidden !important;
+	opacity: 0 !important;  
+}
+
+/* Defines status label parameters to fit it on panel*/
+#statuspanel-label {
+	top: 0px !important;
+	margin-left: 0px !important;
+	margin-top: 0px !important;
+	border: none !important;
+	padding-left: 5px !important;
+	padding-top: 0px !important;
+	background: transparent !important;
+	transition-duration: 150ms !important;
+	transition-delay: 50ms !important;
+	color: var(--toolbar-color) !important;
+}
+
+/* Hides label text when there is no any action with browser or website i.ex. mouse not hovering any link */
+#statuspanel[type="defaultStatus"] #statuspanel-label{
+	visibility: hidden !important;
+	opacity: 0 !important;  
+}
+
+
+
+/* Search bar and dev tools part modified by ablazhov - THANK You! */
+/* Prevents status panel to cover search bar */
+findbar {
+  margin-top: 22px !important;
+  border-top: 1px solid #979898 !important;
+}
+.browserContainer > findbar {
+  margin-bottom: -22px !important;
+}
+
+/* Prevents status panel to cover developer tools when they are on bottom */
+splitter.devtools-horizontal-splitter {
+  margin-top: 20px !important;
+}
+
+.devtools-toolbox-bottom-iframe {
+  margin-bottom: -22px !important;
+  border-top: 1px solid #979898 !important;
+}
+
+
+/* U can ommit part below if won't change colors in some areas */
+/* new, better tabs visibility and theming pinned tabs */
+.tabbrowser-tab:not([selected]) .tab-background{
+	background-color: rgba(128,128,128,.1) !important;
+	border: 1px solid !important;
+	border-color: rgba(128,128,128,.3) !important;
+}
+
+.tabbrowser-tab .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(255, 255, 255, .4) !important;
+}
+
+.tabbrowser-tab:hover:not([selected]) .tab-background{
+	background-color: rgba(255,255,255,.2) !important;
+}
+
+.tabbrowser-tab[pinned]:not([selected]) .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(33,143,166,1) !important;
+}
+
+.tabbrowser-tab[pinned] .tab-background{
+	border: 1px solid !important;
+	border-color: rgba(255, 51, 95, .6) !important;
+}
+
+/* Highlights inactive tabs which audio playing */
+
+.tabbrowser-tab[soundplaying]:not([selected]) .tab-background{
+	border: 2px solid !important;
+	border-color: rgba(255, 25, 95, .6) !important;
+	background-color: rgba(255, 255, 10, .09) !important;
+}
+
+/* URL bar frame color changed to gradient */
+#urlbar:is([focused]) > #urlbar-background,
+#searchbar:focus-within {
+	outline-color: transparent !important;
+	border: 1px solid transparent !important;
+  border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch !important;
+}
+
+/* URL bar frame color changed to gradient
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+#searchbar:focus-within {
+	outline-color: transparent !important;
+	border: 1px solid transparent !important;
+  border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch !important;
+}
+*/
+/* Changes dialog boxes decoration */
+
