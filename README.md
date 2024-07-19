@@ -26,4 +26,6 @@ Open **about:config**, search or create ***toolkit.legacyUserProfileCustomizatio
 
 ### As far works on every system that's Firefox Quantum runs
 
-Many thanks to [ablazhov](https://github.com/ablazhov) for minor but very usefull modifications in Firefox 128 version.
+
+
+### Many thanks to [ablazhov](https://github.com/ablazhov) for minor but very usefull modifications in Firefox 128 version.###
