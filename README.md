@@ -25,3 +25,5 @@ To open **Root Profile** folder just:
 Open **about:config**, search or create ***toolkit.legacyUserProfileCustomizations.stylesheets*** *boolean* preference, set it *true* and restart browser.
 
 ### As far works on every system that's Firefox Quantum runs
+
+Many thanks to [ablazhov](https://github.com/ablazhov) for minor but very usefull modifications in Firefox 128 version.
