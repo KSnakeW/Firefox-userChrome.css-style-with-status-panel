@@ -143,10 +143,11 @@ splitter.devtools-horizontal-splitter {
 }
 
 /* URL bar frame color changed to gradient */
-#urlbar:is([focused]) > #urlbar-background,
+#urlbar:is([focused]),
 #searchbar:focus-within {
 	outline-color: transparent !important;
 	border: 1px solid transparent !important;
-  border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch !important;
+	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch !important;
+	--toolbar-field-focus-border-color: transparent !important;
 }
 
