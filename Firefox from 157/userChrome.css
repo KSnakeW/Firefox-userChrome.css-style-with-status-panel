@@ -1,3 +1,12 @@
+:root{
+	--userchrome-border-radius: 10px;
+	  &:not([lwtheme]) {
+				--statuspanel-color: var(--toolbox-background-color-inactive);
+  }
+  --statuspanel-color: var(--lwt-accent-color);
+}
+
+
 @-moz-document url("about:home"){
 	.nova-enabled .top-sites-list{
 		row-gap: 1.25rem !important;
@@ -12,7 +21,7 @@
 Can be omitted when status panel is displayed dynamically */
 .browserContainer,
 #main-window {
-	border-bottom: 20px solid var(--lwt-accent-color) !important;
+	border-bottom: 20px solid var(--statuspanel-color) !important;
 }
 
 .browserContainer{
@@ -52,7 +61,7 @@ hbox #statuspanel {
 	transition-delay: 50ms !important;
 	border-top: 1px solid;
 	border-image: linear-gradient(90deg, #6200a4 0%, #ff0039 50%, #ff9400 100%) 1 stretch;
-	background-color: var(--lwt-accent-color) !important;
+	background-color: var(--statuspanel-color) !important;
 }
 
 /* Force status panel to show always, even when is empty*/
@@ -86,9 +95,9 @@ html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
 
 /* Defines status label parameters to fit it on panel*/
 #statuspanel-label {
-	top: 0px !important;
-	margin-left: 0px !important;
-	margin-top: 0px !important;
+	/*! top: 0px !important; */
+	/*! margin-left: 0px !important; */
+	/*! margin-top: 0px !important; */
 	border: none !important;
 	padding-left: 5px !important;
 	padding-top: 0px !important;
@@ -136,8 +145,6 @@ splitter.devtools-horizontal-splitter {
 	border-top: 1px solid #979898 !important;
 }
 
-
-
 /* U can ommit part below if won't change colors in some areas */
 /* new, better tabs visibility and theming pinned tabs */
 .tabbrowser-tab:not([selected]) .tab-background {
@@ -151,8 +158,14 @@ splitter.devtools-horizontal-splitter {
 	border-color: rgba(255, 255, 255, .4) !important;
 }
 
+.tabbrowser-tab:is([selected], [multiselected]) .tab-background {
+	box-shadow: 2px 2px 2px black !important;	
+	background-color: inherit !important;
+}
+
 .tabbrowser-tab:hover:not([selected]) .tab-background {
-	background-color: rgba(255, 255, 255, .2) !important;
+	background-color:  !important;
+	box-shadow: 1px 1px 2px black !important;	
 }
 
 .tabbrowser-tab[pinned]:not([selected]) .tab-background {
@@ -161,8 +174,14 @@ splitter.devtools-horizontal-splitter {
 }
 
 .tabbrowser-tab[pinned] .tab-background {
+  border: 1px solid !important;
+	border-color: rgba(51, 245, 255, 0.6) !important;
+}
+
+.tabbrowser-tab:is([pinned][selected]) .tab-background {
 	border: 1px solid !important;
-	border-color: rgba(255, 51, 95, .6) !important;
+	outline: none !important;
+	border-color: rgba(46, 149, 171, 1) !important;
 }
 
 /* Highlights inactive tabs which audio playing */
@@ -170,13 +189,20 @@ splitter.devtools-horizontal-splitter {
 .tabbrowser-tab[soundplaying]:not([selected]) .tab-background {
 	border: 2px solid !important;
 	border-color: rgba(255, 25, 95, .6) !important;
-	background-color: rgba(255, 255, 10, .09) !important;
+	background-color: rgba(0, 106, 51, .09) !important;
 }
 
 .tabbrowser-tab[soundplaying]:not([pinned]) .tab-icon-image {
 	display: none !important;
 	visibility: hidden !important;
+
 }
+
+.tabbrowser-tab[soundplaying][pinned] .tab-icon-image{
+	margin-left: -4px !important;
+	margin-top: -2px !important;
+}
+
 
 .tabbrowser-tab {
 	@media not -moz-pref("sidebar.visibility", "expand-on-hover") {
@@ -188,6 +214,18 @@ splitter.devtools-horizontal-splitter {
 	}
 }
 
+
+/* bookmarks */
+.bookmark-item {
+	background-color: rgba(128, 128, 128, .07) !important;
+	border-radius: var(--userchrome-border-radius) !important;
+	border: 1px solid !important;
+	border-color: rgba(128, 128, 128, .07) !important;
+}
+
+.bookmark-item:hover{
+		border-color: rgba(128, 128, 128, .5) !important;
+}
 
 /* URL bar frame color changed to gradient
 #urlbar:is([focused]),
