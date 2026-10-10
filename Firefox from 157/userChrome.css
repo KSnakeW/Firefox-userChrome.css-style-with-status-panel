@@ -161,6 +161,7 @@ splitter.devtools-horizontal-splitter {
 .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
 	box-shadow: 2px 2px 2px black !important;	
 	background-color: inherit !important;
+	border-color: rgba(128, 128, 128, .5) !important;
 }
 
 .tabbrowser-tab:hover:not([selected]) .tab-background {
