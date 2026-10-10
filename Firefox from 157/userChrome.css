@@ -130,7 +130,8 @@ splitter.devtools-horizontal-splitter {
 	margin-top: 20px !important;
 }
 
-.devtools-toolbox-bottom-iframe {
+
+.devtools-toolbox-iframe.bottom-host{
 	margin-bottom: -22px !important;
 	border-top: 1px solid #979898 !important;
 }
