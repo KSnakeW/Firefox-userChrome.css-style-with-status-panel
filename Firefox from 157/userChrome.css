@@ -95,9 +95,9 @@ html[inFullscreen="true"] #statuspanel[type="defaultStatus"] {
 
 /* Defines status label parameters to fit it on panel*/
 #statuspanel-label {
-	/*! top: 0px !important; */
-	/*! margin-left: 0px !important; */
-	/*! margin-top: 0px !important; */
+	top: 0px !important;
+	margin-left: 0px !important;
+	margin-top: 0px !important;
 	border: none !important;
 	padding-left: 5px !important;
 	padding-top: 0px !important;
@@ -161,6 +161,7 @@ splitter.devtools-horizontal-splitter {
 .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
 	box-shadow: 2px 2px 2px black !important;	
 	background-color: inherit !important;
+
 	border-color: rgba(128, 128, 128, .5) !important;
 }
 
@@ -190,7 +191,7 @@ splitter.devtools-horizontal-splitter {
 .tabbrowser-tab[soundplaying]:not([selected]) .tab-background {
 	border: 2px solid !important;
 	border-color: rgba(255, 25, 95, .6) !important;
-	background-color: rgba(0, 106, 51, .09) !important;
+	background-color: rgba(255, 218, 56, .07) !important;
 }
 
 .tabbrowser-tab[soundplaying]:not([pinned]) .tab-icon-image {

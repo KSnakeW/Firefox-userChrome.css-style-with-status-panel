@@ -1,10 +1,10 @@
-# Firefox userChrome.css style with status panel
-UserChrome.css style for Firefox ver. > 96 with default theme. Restores status panel.
+# Firefox userChrome.css style with status bar
+UserChrome.css style for Firefox ver. > 96 with default theme. Restores status bar (status panel).
 
 Allows restore classic status panel in Firefox. Additionally subtly changes tabs look in default Firefox themes.
 
 **From version 157**
-- Nova theme is now widely provided. This is somehow messing with colors schemes. If you used *about:config* to disable and re-enable Nova then you have to use newest version which contains dynamicaly assigned status panel color. Good news is that, that new version works perfectly with thirdparty themes and Mozilla's "Firefox Color" addon as well.
+- Nova theme is now widely provided. This is somehow messing with colors schemes. If you used *about:config* to disable and re-enable Nova then you have to use newest version which contains dynamicaly assigned status bar color. Good news is that, that new version works perfectly with thirdparty themes and Mozilla's "Firefox Color" addon as well.
 - I added some accents to bookmarks which allows to distinguish buttons from background.
 - Now there are shadows under tabs.
 
